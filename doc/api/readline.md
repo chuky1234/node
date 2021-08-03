@@ -12,24 +12,20 @@ stream (such as [`process.stdin`][]) one line at a time.
 To use the promise-based APIs:
 
 ```mjs
-// Using ESM Module syntax:
 import * as readline from 'readline/promises';
 ```
 
 ```cjs
-// Using CommonJS syntax:
 const readline = require('readline/promises');
 ```
 
 To use the callback and sync APIs:
 
 ```mjs
-// Using ESM Module syntax:
 import * as readline from 'readline';
 ```
 
 ```cjs
-// Using CommonJS syntax:
 const readline = require('readline');
 ```
 
