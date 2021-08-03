@@ -728,7 +728,7 @@ The `readlinePromises.createInterface()` method creates a new `readlinePromises.
 instance.
 
 ```js
-const readlinePromises = require('readlinePromises');
+const readlinePromises = require('readline/promises');
 const rl = readlinePromises.createInterface({
   input: process.stdin,
   output: process.stdout
