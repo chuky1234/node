@@ -600,12 +600,14 @@ setTimeout(() => ac.abort(), 10000);
 added: REPLACEME
 -->
 
-#### `readlinePromises.Readline.prototype.constructor(stream)`
+#### `readlinePromises.Readline.prototype.constructor(stream[, options])`
 <!-- YAML
 added: REPLACEME
 -->
 
 * `stream` {stream.Writable} A [TTY][] stream.
+* `options` {Object}
+  * `autoCommit` {boolean} If `true`, no need to call `rl.commit()`.
 
 #### `readlinePromises.Readline.prototype.clearLine(dir)`
 <!-- YAML
@@ -621,7 +623,8 @@ added: REPLACEME
 The `rl.clearLine()` method adds to the internal list of pending action an
 action that clears current line of the associated `stream` in a specified
 direction identified by `dir`.
-You need to call `rl.commit()` to see the effect of this method.
+You need to call `rl.commit()` to see the effect of this method, unless
+`autoCommit: true` was passed to the constructor.
 
 #### `readlinePromises.Readline.prototype.clearScreenDown()`
 <!-- YAML
@@ -633,7 +636,8 @@ added: REPLACEME
 The `rl.clearScreenDown()` method adds to the internal list of pending action an
 action that clears the associated stream from the current position of the
 cursor down.
-You need to call `rl.commit()` to see the effect of this method.
+You need to call `rl.commit()` to see the effect of this method, unless
+`autoCommit: true` was passed to the constructor.
 
 #### `readlinePromises.Readline.prototype.commit()`
 <!-- YAML
@@ -656,7 +660,8 @@ added: REPLACEME
 
 The `rl.cursorTo()` method adds to the internal list of pending action an action
 that moves cursor to the specified position in the associated `stream`.
-You need to call `rl.commit()` to see the effect of this method.
+You need to call `rl.commit()` to see the effect of this method, unless
+`autoCommit: true` was passed to the constructor.
 
 #### `readlinePromises.Readline.prototype.moveCursor(dx, dy)`
 <!-- YAML
@@ -670,7 +675,8 @@ added: REPLACEME
 The `rl.moveCursor()` method adds to the internal list of pending action an
 action that moves the cursor *relative* to its current position in the
 associated `stream`.
-You need to call `rl.commit()` to see the effect of this method.
+You need to call `rl.commit()` to see the effect of this method, unless
+`autoCommit: true` was passed to the constructor.
 
 #### `readlinePromises.Readline.prototype.rollback()`
 <!-- YAML
