@@ -594,12 +594,12 @@ signal.addEventListener('abort', () => {
 setTimeout(() => ac.abort(), 10000);
 ```
 
-### `readlinePromises.Readline(stream)`
+### Class: `readlinePromises.Readline`
 <!-- YAML
 added: REPLACEME
 -->
 
-#### `readlinePromises.Readline.prototype.constructor(stream[, options])`
+#### `new readlinePromises.Readline(stream[, options])`
 <!-- YAML
 added: REPLACEME
 -->
@@ -608,7 +608,7 @@ added: REPLACEME
 * `options` {Object}
   * `autoCommit` {boolean} If `true`, no need to call `rl.commit()`.
 
-#### `readlinePromises.Readline.prototype.clearLine(dir)`
+#### `rl.clearLine(dir)`
 <!-- YAML
 added: REPLACEME
 -->
@@ -625,7 +625,7 @@ direction identified by `dir`.
 Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`
 was passed to the constructor.
 
-#### `readlinePromises.Readline.prototype.clearScreenDown()`
+#### `rl.clearScreenDown()`
 <!-- YAML
 added: REPLACEME
 -->
@@ -638,7 +638,7 @@ cursor down.
 Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`
 was passed to the constructor.
 
-#### `readlinePromises.Readline.prototype.commit()`
+#### `rl.commit()`
 <!-- YAML
 added: REPLACEME
 -->
@@ -648,7 +648,7 @@ added: REPLACEME
 The `rl.commit()` method sends all the pending actions to the associated
 `stream` and clears the internal list of pending actions.
 
-#### `readlinePromises.Readline.prototype.cursorTo(x[, y])`
+#### `rl.cursorTo(x[, y])`
 <!-- YAML
 added: REPLACEME
 -->
@@ -662,7 +662,7 @@ that moves cursor to the specified position in the associated `stream`.
 Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`
 was passed to the constructor.
 
-#### `readlinePromises.Readline.prototype.moveCursor(dx, dy)`
+#### `rl.moveCursor(dx, dy)`
 <!-- YAML
 added: REPLACEME
 -->
@@ -677,7 +677,7 @@ associated `stream`.
 Call `rl.commit()` to see the effect of this method, unless `autoCommit: true`
 was passed to the constructor.
 
-#### `readlinePromises.Readline.prototype.rollback()`
+#### `rl.rollback()`
 <!-- YAML
 added: REPLACEME
 -->
@@ -792,7 +792,7 @@ added: v0.1.104
 added: v0.1.104
 changes:
   - version: REPLACEME
-    pr-url: https://github.com/nodejs/node/pull/00000
+    pr-url: https://github.com/nodejs/node/pull/37947
     description: The class `readline.Interface` now inherits from `Interface`.
 -->
 
