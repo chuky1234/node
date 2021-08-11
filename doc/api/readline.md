@@ -39,7 +39,6 @@ const rl = readline.createInterface({ input, output });
 
 const answer = await rl.question('What do you think of Node.js? ');
 
-// TODO: Log the answer in a database
 console.log(`Thank you for your valuable feedback: ${answer}`);
 
 rl.close();
@@ -559,7 +558,7 @@ added: REPLACEME
 * `options` {Object}
   * `signal` {AbortSignal} Optionally allows the `question()` to be canceled
     using an `AbortController`.
-* Returns: {Promise} A promise that is resolved with the user's
+* Returns: {Promise} A promise that is fulfilled with the user's
   input in response to the `query`.
 
 The `rl.question()` method displays the `query` by writing it to the `output`,
