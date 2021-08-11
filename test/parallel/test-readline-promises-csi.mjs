@@ -1,11 +1,13 @@
 // Flags: --expose-internals
-'use strict';
 
-const common = require('../common');
-const assert = require('assert');
-const { Readline } = require('readline/promises');
-const { Writable } = require('stream');
-const { CSI } = require('internal/readline/utils');
+
+import '../common/index.mjs';
+import assert from 'assert';
+import { Readline } from 'readline/promises';
+import { Writable } from 'stream';
+
+import utils from 'internal/readline/utils';
+const { CSI } = utils;
 
 const INVALID_ARG = {
   name: 'TypeError',
@@ -31,7 +33,7 @@ class TestWritable extends Writable {
   assert.throws(() => new Readline(arg), INVALID_ARG)
 );
 
-(async function test() {
+{
   const writable = new TestWritable();
   const readline = new Readline(writable);
 
@@ -148,4 +150,14 @@ class TestWritable extends Writable {
     code: 'ERR_OUT_OF_RANGE',
     name: 'RangeError',
   });
-})().then(common.mustCall());
+}
+
+{
+  const error = new Error();
+  const writable = new class extends Writable {
+    _write() { throw error; }
+  }();
+  const readline = new Readline(writable);
+
+  await assert.rejects(readline.cursorTo(1).commit(), error);
+}
