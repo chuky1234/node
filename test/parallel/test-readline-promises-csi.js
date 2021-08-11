@@ -11,6 +11,7 @@ const INVALID_ARG = {
   name: 'TypeError',
   code: 'ERR_INVALID_ARG_TYPE',
 };
+
 class TestWritable extends Writable {
   data = '';
   _write(chunk, encoding, callback) {
