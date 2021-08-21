@@ -12,7 +12,7 @@ stream (such as [`process.stdin`][]) one line at a time.
 To use the promise-based APIs:
 
 ```mjs
-import * as readline from 'readline/promises';
+import * as readline from 'node:readline/promises';
 ```
 
 ```cjs
@@ -22,7 +22,7 @@ const readline = require('readline/promises');
 To use the callback and sync APIs:
 
 ```mjs
-import * as readline from 'readline';
+import * as readline from 'node:readline';
 ```
 
 ```cjs
@@ -32,7 +32,7 @@ const readline = require('readline');
 The following simple example illustrates the basic use of the `readline` module.
 
 ```mjs
-import * as readline from 'readline/promises';
+import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'process';
 
 const rl = readline.createInterface({ input, output });
